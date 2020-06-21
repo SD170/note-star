@@ -1,0 +1,14 @@
+Your Details : <br>
+Username : {{user.username}}<br>
+Full Name : {{profile.full_name}}<br>
+Email : {{profile.email}}<br>
+College : {{profile.college_name.name}}<br>
+Department : {{profile.college_name.department.name}}<br>
+Year : {{profile.college_name.year.no}}<br>
+
+
+<center>
+<a class="btn" href="{% url 'new_note_create' %}">Post Notes</a><br>
+<a class="btn" href="{% url 'search_note_1' %}">Search Note</a><br>
+</center>
+

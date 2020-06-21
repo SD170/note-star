@@ -1,0 +1,11 @@
+
+<form  action="{% url 'search_note_2' %}" method="POST">
+    {% csrf_token %}
+    Select Teacher : 
+    <select id="search1" name="search1">
+        {% for teacher in dept_teachers %}
+            <option value={{teacher.id}}>{{teacher.full_name}}</option>
+        {% endfor %}
+    </select>
+    <br><input class="btn btn-primary" type="submit" value="Submit">
+</form>

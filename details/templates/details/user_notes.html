@@ -1,0 +1,28 @@
+
+<hr>
+
+{% if part_notes %}
+    {% comment %} {{part_notes}} {% endcomment %}
+    {% for i in part_notes %}
+        <br><a href="/static/media/{{i.document.uploaded_file}}">{{i.document.uploaded_file}}</a>
+    {% endfor %}
+
+{% elif topic_notes %}
+    {% comment %} {{topic_notes}} {% endcomment %}
+    {% for i in topic_notes %}
+        <br><a href="/static/media/{{i.document.uploaded_file}}">{{i.document.uploaded_file}}</a>
+    {% endfor %}
+{% elif subject_notes %}
+    {% comment %} {{subject_notes}} {% endcomment %}
+    {% for i in subject_notes %}
+        <br><a href="/static/media/{{i.document.uploaded_file}}">{{i.document.uploaded_file}}</a>
+    {% endfor %}
+
+
+{% elif teacher_notes %}
+    {% comment %} {{teacher_notes}} {% endcomment %}
+    {% for i in teacher_notes %}
+        <br><a href="/static/media/{{i.document.uploaded_file}}">{{i.document.uploaded_file}}</a>
+    {% endfor %}
+
+{% endif %}

@@ -1,0 +1,19 @@
+you can login with existing user - <br>
+username : real <br>
+pass : greenhell12<br>
+
+<form method="POST" class="sign-up-form">
+    {% csrf_token %}
+    {{ user_form.as_p }}
+    College Name :<input type="text" name='college_name' list="college-obj" />
+    <datalist id="college-obj">
+      {% for college in colleges %}
+      <option>{{college.name}}</option>
+      {% endfor %}
+    </datalist>
+    <center>
+      <button type="submit" class="btn btn-lg btn-dark">Submit</button>
+      {{user_form.errors}}
+      <div>alrady have an account <a href="{% url 'login' %}">Login Here</a></div>
+    </center>
+  </form>

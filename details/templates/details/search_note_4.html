@@ -1,0 +1,35 @@
+
+
+{% comment %} <br>{{part_list}} {% endcomment %}
+
+{% comment %} <input type='hidden' name='subject_id' value={{subject_id}}> {% endcomment %}
+<form  action="{% url 'part_result' %}" method="POST">
+    {% csrf_token %}
+    Select Part : 
+    <select id="search4" name="search4">
+        {% for part in part_list %}
+            <option value={{part.id}}>{{part.name}}</option>
+        {% endfor %}
+    </select>
+    <input type='hidden' name='subject_id' value={{subject_id}}>
+    <input type='hidden' name='topic_id' value={{topic_id}}>
+    <br><input class="btn btn-primary" type="submit" value="Submit">
+</form>
+
+<hr>
+
+{% comment %} {{topic_notes}} {% endcomment %}
+{% for i in topic_notes %}
+    <br>
+    <br>User : {{i.user}}
+    <br>Deaprtment : {{i.department}}
+    <br>Subject : {{i.subject}}
+    <br>Topic : {{i.topic}}
+    <br>Part : {{i.part}}
+    <br>Date Created : {{i.created_date}}
+    {% comment %} <br>Downloaded : {{i.download}} {% endcomment %}
+    <br><a href="{% url 'user_notes' i.user.id %}?teacher_id={{i.teacher.id}}&subject_id={{i.subject_id}}&topic_id={{i.topic.id}}">Download</a>
+{% endfor %} 
+
+
+

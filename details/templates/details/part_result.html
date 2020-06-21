@@ -1,0 +1,24 @@
+{% comment %} {% load static %} {% endcomment %}
+
+{% comment %} {{part_notes}} {% endcomment %}
+{% for i in part_notes %}
+    <br>
+    <br>User : {{i.user}}
+    <br>Deaprtment : {{i.department}}
+    <br>Date Created : {{i.created_date}}
+    {% comment %} <br>Downloaded : {{i.download}} {% endcomment %}
+    <br><a href="{% url 'user_notes' i.user.id %}?teacher_id={{i.teacher.id}}&subject_id={{i.subject_id}}&topic_id={{i.topic.id}}&part_id={{i.part.id}}">Download</a>
+{% endfor %} 
+
+
+
+
+
+
+<hr>
+{% comment %} <a href="{% static 'media/2020-06-12_02-08_IF3p8Um.png' %}">asas</a><br> {% endcomment %}
+{% comment %} <a href="{% static a %}">asas</a> {% endcomment %}
+
+
+{% comment %} <a href="/static/media/{{a}}">asas</a> {% endcomment %}
+

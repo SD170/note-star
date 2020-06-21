@@ -1,0 +1,27 @@
+<form  action="{% url 'search_note_3' %}" method="POST">
+    {% csrf_token %}
+    Select Subject : 
+    <select id="search2" name="search2">
+        {% for sub in teacher_subjects %}
+            <option value={{sub.id}}>{{sub.name}}</option>
+        {% endfor %}
+    </select>
+    <br><input class="btn btn-primary" type="submit" value="Submit">
+</form>
+
+<hr>
+
+{% comment %} {{teacher_notes}} {% endcomment %}
+{% for i in teacher_notes %}
+    <br>
+    <br>User : {{i.user}}
+    <br>Deaprtment : {{i.department}}
+    <br>Subject : {{i.subject}}
+    {% comment %} <br>Topic : {{i.topic}} {% endcomment %}
+    {% comment %} <br>Part : {{i.part}} {% endcomment %}
+    <br>Date Created : {{i.created_date}}
+    {% comment %} <br>Downloaded : {{i.download}} {% endcomment %}
+    <br><a href="{% url 'user_notes' i.user.id %}?teacher_id={{i.teacher.id}}">Download</a>
+{% endfor %} 
+
+

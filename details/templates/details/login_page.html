@@ -1,0 +1,12 @@
+you can login with existing user - <br>
+username : real <br>
+pass : greenhell12<br>
+
+<form method="POST" action="">
+    {% csrf_token %}
+    <input type="text" class="fadeIn second" name="username" placeholder="Username..." >
+    <input type="password" class="fadeIn third" name="password" placeholder="Password..."  >
+    <input  class="fadeIn fourth"  type="submit" value="Login">
+</form>
+//dev
+//no signal so create profile for superuser

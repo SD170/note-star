@@ -1,0 +1,25 @@
+{{user.college_name.name}}
+
+<form method="POST" action="{% url 'home' %}">
+    {% csrf_token %}
+    
+    
+    Department Name :<input type="text" name='dept_name' list="dept-obj" />
+    <datalist id="dept-obj">
+      {% for dept in departments %}
+      <option>{{dept.name}}</option>
+      {% endfor %}
+    </datalist>
+
+    
+     Year :<select id="year" name="year">
+        <option value='1st'>1st</option>
+        <option value='2nd'>2nd</option>
+        <option value='3rd'>3rd</option>
+        <option value='4th'>4th</option>
+    </select> 
+
+    <button type="submit" >Submit</button>
+
+
+</form>
